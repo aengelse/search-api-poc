@@ -1,12 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const Layout = ({ facets, filters, pagination }) => (
-  <div className="container js-ecommerce-container">
+import Facets from './Facets';
+
+const Layout = ({ facets, pagination }) => (
+  <div className="container">
     <div className="filtered-search">
       <div className="filtered-search__filters visible-from-medium">
-        Facets: {facets.length} <br />
-        Filters: {filters.length}
+        <Facets facets={facets} />    
       </div>
       <div className="filtered-search__results">
         Total results: {pagination.totalResults}
